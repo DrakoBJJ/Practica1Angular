@@ -20,7 +20,7 @@ export class LoginComponent {
 
   // Variable para mostrar el mensaje de validación
   datos: string = '';
-
+  
   constructor(private router: Router) {}
 
   // Método de validación para usuario y contraseña
