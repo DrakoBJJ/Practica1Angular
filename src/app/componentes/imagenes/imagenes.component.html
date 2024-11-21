@@ -14,7 +14,16 @@
         <div class="card-body">
           <!-- Nombre de la ciudad -->
           <h5 class="card-title">{{ ciudad.nombreCiudad }}</h5>
-          <p class="card-text">-------------------</p>
+          <p class="card-text">
+            <ng-container *ngIf="weatherData && ciudad.nombreCiudad.toLowerCase() === txBox.get('ciudad')?.value?.toLowerCase()">
+              Temperatura: {{ weatherData.main.temp }}°C<br>
+              Humedad: {{ weatherData.main.humidity }}%<br>
+              Descripción: {{ traducirDescripcion (weatherData.weather[0].description) }}
+            </ng-container>
+            <ng-container *ngIf="!weatherData || ciudad.nombreCiudad !== txBox.get('ciudad')?.value">
+              Loading
+            </ng-container>
+          </p>
         </div>
       </div>
     </div>
