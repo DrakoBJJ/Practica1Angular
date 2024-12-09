@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicioTiempoService {
 
-  private apiKey = '883ed249f1dc3422caadbb9e72039fb4'; // clave API de OpenWeatherMap
+  private apiKey = ''; // clave API de OpenWeatherMap
   private apiUrl = `https://api.openweathermap.org/data/2.5/weather`;
 
   constructor(private http: HttpClient) { }
